@@ -9,8 +9,8 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
-    print(the_list[0])
-    return the_list[-1]
+    newlist = [the_list[0],the_list[-1]]
+    return newlist
 
 
 # write a function that returns part of "the_list" between indices given by the
@@ -22,18 +22,18 @@ def part_reverse(the_list, beginning, end):
     if beginning > end or len(the_list) < beginning or end:
         raise(ValueError)
     else:
-        return reversed(the_list[beginning:end])# hint this is incomplete
+        secondlist = the_list[beginning:end]
+        return secondlist.reverse() # hint this is incomplete
 
 
 # write a function that at the "index" of "the_list" inserts three times the
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    i=0
-    while i < 3:
+    for i in range(3):
         the_list.insert(index,the_list[index])
         i = i+1
-    return
+    return the_list
 
 
 # Strings
@@ -41,7 +41,11 @@ def repeat_at_index(the_list, index):
 # write a function that checks whether the word is a palindrome, i.e. it reads
 # the same forward and backwards
 def palindrome_word(word):
-    return
+    wordrev = word[::-1]
+    if word == wordrev:
+        print('palindrome')
+    else:
+        return('not palindrome')
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
