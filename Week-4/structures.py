@@ -9,7 +9,8 @@ Simple functions performing operations on basic Python data structures.
 # write a function that returns a list containig the first and the last element
 # of "the_list". 
 def first_and_last(the_list):
-    return the_list[0],[-1]
+    print(the_list[0])
+    return the_list[-1]
 
 
 # write a function that returns part of "the_list" between indices given by the
@@ -18,10 +19,10 @@ def first_and_last(the_list):
 # If "end" is greater then "beginning" or any og the indices is out of the
 # list, raise a "ValueError" exception. 
 def part_reverse(the_list, beginning, end):
-    if end > beginning or len(the_list) < 3:
+    if beginning > end or len(the_list) < beginning or end:
         raise(ValueError)
     else:
-        return reversed(the_list[1:2])# hint this is incomplete
+        return reversed(the_list[beginning:end])# hint this is incomplete
 
 
 # write a function that at the "index" of "the_list" inserts three times the
