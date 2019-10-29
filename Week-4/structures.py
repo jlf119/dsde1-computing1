@@ -30,7 +30,7 @@ def part_reverse(the_list, beginning, end):
 # same value. For example if the_list = [0,1,2,3,4] and index = 3 the function
 # will return [0,1,2,3,3,3,4]. 
 def repeat_at_index(the_list, index):
-    for i in range(3):
+    for i in range(2):
         the_list.insert(index,the_list[index])
         i = i+1
     return the_list
@@ -42,16 +42,16 @@ def repeat_at_index(the_list, index):
 # the same forward and backwards
 def palindrome_word(word):
     wordrev = word[::-1]
-    if word == wordrev:
-        print('palindrome')
-    else:
-        return('not palindrome')
+    return word == wordrev
 
 # write a function that checks whether the sentence is a palindrome, i.e. it
 # read the same forward and backward. Ignore all spaces and other characters
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
+    sentence.split()
+    sentence.strip('.')
+    sentence.strip(',')
     return
 
 # write a function that concatenates two sentences. First the function checks
@@ -61,7 +61,7 @@ def palindrome_sentence(sentence):
 # the end.  The concatenated sentence must have no white space at the beginning
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
-def concatenate_sentences(sentenece1, sentence2):
+def concatenate_sentences(sentence1, sentence2):
     return
 
 
