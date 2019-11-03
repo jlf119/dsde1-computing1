@@ -49,10 +49,10 @@ def palindrome_word(word):
 # like fullstops, commas, etc. Also do not consider whether the letter is
 # capital or not. 
 def palindrome_sentence(sentence):
-    sentence.split()
-    sentence.strip('.')
-    sentence.strip(',')
-    return
+    import string
+    sentence2 = ''.join(i.lower() for i in sentence if i in string.ascii_letters)
+    sentencerev = sentence2[::-1]
+    return sentence2 == sentencerev
 
 # write a function that concatenates two sentences. First the function checks
 # whether the sentence meets the following criteria: it starts with a capital
@@ -62,7 +62,25 @@ def palindrome_sentence(sentence):
 # or at the end and the must be exactly one space after the end of the first
 # sentence. 
 def concatenate_sentences(sentence1, sentence2):
-    return
+    import string
+    if sentence1[0] == ' ':
+        del sentence1[0]
+    if sentence1[-1] == ' ':
+        del sentence1[-1]
+    if sentence2[0] == ' ':
+        del sentence2[0]
+    if sentence2[-1] == ' ':
+        del sentence2[-1]
+    if sentence1[0].islower():
+        return 'sentence 1 start upper case'
+    if sentence2[0].islower():
+        return 'sentence 2 start upper case'
+    if sentence1[-1] not in string.punctuation:
+        return 'sentence 1 finish right'
+    if sentence2[-1] not in string.punctuation:
+        return 'sentence 2 finish right'
+    return sentence1 + ' ' + sentence2
+
 
 
 # Dictionaries
@@ -70,14 +88,22 @@ def concatenate_sentences(sentence1, sentence2):
 # write a function that checks whether there is a record with given key in the
 # dictionary. Return True or False.
 def index_exists(dictionary, key):
-    return
+    if key in dictionary:
+        return True
+    else:
+        return False
+    
 
 # write a function which checks whether given value is stored in the
 # dictionary. Return True or False.
 def value_exists(dictionary, value):
-    return
+    if value in dictionary.values():
+        return True
+    else:
+        return False
 
 # write a function that returns a new dictionary which contains all the values
 # from dictionary1 and dictionary2.
 def merge_dictionaries(dictionary1, dictionary2):
-    return
+    dictionary1.update(dictionary2)
+    return dictionary1
