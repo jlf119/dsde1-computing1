@@ -37,9 +37,7 @@ def welcome_message(user_name = '',place = ''):
 # if avg_type='median', return the median of this list
 def list_average(user_list,avg_type = 'mean'):
     if avg_type == 'mean':
-        x = 0
-        for i in user_list:
-            x = x + i
+        x = sum(user_list)
         return x / len(user_list)
     elif avg_type == 'mode':
         return max(user_list, key = user_list.count)
