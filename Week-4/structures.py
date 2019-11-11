@@ -68,13 +68,13 @@ def palindrome_sentence(sentence):
 def concatenate_sentences(sentence1, sentence2):
     import string
     if sentence1[0] == ' ':
-        del sentence1[0]
+        sentence1 = sentence1.replace(' ','',1)
     if sentence1[-1] == ' ':
-        del sentence1[-1]
+        sentence1 = sentence1[:len(sentence1) - 1]
     if sentence2[0] == ' ':
-        del sentence2[0]
+        sentence2 = sentence2.replace(' ','',1)
     if sentence2[-1] == ' ':
-        del sentence2[-1]
+        sentence2 = sentence2[:len(sentence2) - 1]
     if sentence1[0].islower():
         return 'sentence 1 start upper case'
     if sentence2[0].islower():
